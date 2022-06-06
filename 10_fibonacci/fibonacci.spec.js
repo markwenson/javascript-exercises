@@ -2,10 +2,10 @@ const fibonacci = require('./fibonacci')
 
 describe('fibonacci', () => {
   test('4th fibonacci number is 3', () => {
-    expect(fibonacci(4)).toBe(3);
+  expect(fibonacci(4)).toBe(3);
   });
   test('6th fibonacci number is 8', () => {
-    expect(fibonacci(6)).toBe(8);
+  expect(fibonacci(6)).toBe(8);
   });
   test('10th fibonacci number is 55', () => {
     expect(fibonacci(10)).toBe(55);
