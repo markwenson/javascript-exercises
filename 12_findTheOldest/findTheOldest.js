@@ -16,36 +16,33 @@ const people = [
   },
 ]
 const findTheOldest = function(array) {
-  const reduced = array.reduce(reducer);
+  let reduced = array.reduce(reducer)
   return reduced;
 };
 
-function reducer(oldestPerson, currentPerson) {
-   
-  let oldBirth = oldestPerson.yearOfBirth;
-  let oldDeath = oldestPerson.yearOfDeath;
-  if (!oldDeath) {
-     oldDeath = new Date().getFullYear();
- 	}; 
-  let currentBirth = currentPerson.yearOfBirth; 
-  let currentDeath = currentPerson.yearOfDeath;
-  if (!currentDeath) {
-     currentDeath = new Date().getFullYear();
-  };
-    
-  const oldestAge = oldDeath - oldBirth;
-  const currentAge = currentDeath - currentBirth;
-
- 
-  if (oldestAge > currentAge) {
-    return oldestPerson;
-  } else {
-    return currentPerson;
+function reducer(accumulator, item){
+  let firstBirth = accumulator.yearOfBirth;
+  let firstDeath = accumulator.yearOfDeath;
+  if(!accumulator.yearOfDeath) {
+    firstDeath = new Date().getFullYear();
   }
-};
 
+  let nextBirth = item.yearOfBirth;
+  let nextDeath = item.yearOfDeath;
+  if(!item.yearOfDeath) {
+    nextDeath = new Date().getFullYear();
+  }
 
-findTheOldest(people);
+  let firstYearsLived = firstDeath - firstBirth;
+  let nextYearsLived = nextDeath - nextBirth;
+
+  if (firstYearsLived>nextYearsLived) {
+    return accumulator;
+  } else {
+    return item;
+  }
+
+}
 
 
 findTheOldest(people);

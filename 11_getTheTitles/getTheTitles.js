@@ -9,7 +9,9 @@ const books = [
     }
 ];
 const getTheTitles = function(arg) {
-      let newArr = arg.map(item => item.title);
+      let newArr = arg.map(function(item) {
+        return item.title;
+      });
       return newArr;
 };
 getTheTitles(books);
