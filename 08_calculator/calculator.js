@@ -1,47 +1,48 @@
 const add = function(num1, num2) {
-	return num1 + num2;
+  return num1 + num2;
 };
 
 const subtract = function(num1, num2) {
-	return  num1 - num2;
+  return num1 - num2;
 };
 
-
 const sum = function(...arg) {
-	const array = arg[0];
-  let sumArray = 0;
+  let array = arg[0];
+  let sumArray = 0
   for(let i = 0; i < array.length; i++) {
-    sumArray = sumArray + array[i];
+    sumArray = sumArray + array[i]
   }
   return sumArray;
 };
 
-
 const multiply = function(...arg) {
-  const array = arg[0];
-  let multiArray = 1;
-  for(let i = 0; i < array.length; i++) {
-    multiArray = multiArray * array[i];
+  let array = arg[0];
+  let multiplied = 1;
+  for (let i = 0; i < array.length; i++) {
+    multiplied = multiplied * array[i]
   }
-  return multiArray;
+  return multiplied;
 };
-
+multiply([2,4])
+multiply([2,4,6,8,10,12,14])
 
 const power = function(num1, num2) {
 	return Math.pow(num1,num2);
 };
+power(4,3)
 
 const factorial = function(num1) {
-  if(num1 === 0) {
+  if (num1 === 0) {
     return 1;
   }
-  let factor = 1;
-	for(i = num1; i > 0;i--) {
-    factor = factor * i;
+  let number = 1;
+  for(let i = num1; i > 0; i--) {
+    number = number * i;
   }
-  return factor;
-
+  return number;
 };
+
+factorial(5);
 factorial(10);
 
 // Do not edit below this line
